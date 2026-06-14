@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CUDA: Build current file",
+            "type": "process",
+            "command": "${workspaceFolder}\\.vscode\\nvcc-build.cmd",
+            "args": [
+                "-std=c++17",
+                "-O2",
+                "-lineinfo",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        }
+    ]
+}
