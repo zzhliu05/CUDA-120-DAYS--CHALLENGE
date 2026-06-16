@@ -1,0 +1,25 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "Win32-CUDA",
+            "compilerPath": "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/nvcc.exe",
+            "intelliSenseMode": "windows-msvc-x64",
+            "cppStandard": "c++17",
+            "cStandard": "c17",
+            "includePath": [
+                "${workspaceFolder}/my-cuda-project/include",
+                "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/include",
+                "${workspaceFolder}/**"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/my-cuda-project/include",
+                    "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/include",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ]
+}

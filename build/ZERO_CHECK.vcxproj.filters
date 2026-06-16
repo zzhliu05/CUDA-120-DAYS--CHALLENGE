@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\CUDA-120-DAYS--CHALLENGE\build\CMakeFiles\efda1fa76702a3c2ce0a69c327aa68e5\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D0798A53-3461-3B09-89FB-C8448B5375A8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,18 @@
+{
+    "cmake.sourceDirectory": "E:/CUDA-120-DAYS--CHALLENGE/my-cuda-project",
+    "files.associations": {
+        "*.cu": "cpp",
+        "*.cuh": "cpp"
+    },
+    "C_Cpp.default.configurationProvider": "",
+    "C_Cpp.default.compilerPath": "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/nvcc.exe",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/my-cuda-project/include",
+        "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/include",
+        "${workspaceFolder}/**"
+    ],
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
+    "C_Cpp.autocomplete": "default",
+    "C_Cpp.errorSquiggles": "enabled"
+}
