@@ -9,6 +9,17 @@ __global__ void vectorAddGPU(float *A, float *B, float *C, int N) {
     }
 }
 
+
+__global__ void vectorAddGPUCondition(float *A,float *B,float *C,int N){
+    int idx=blockIdx.x*blockDim.x+threadIdx.x;
+    if(idx<N){
+        if(idx %2 ==0){
+            C[idx]=A[idx]+B[idx];
+        } else {
+            C[idx]=A[idx]-B[idx];
+        }
+    }
+}
 int main() {
     int N = 100000000; // 100 million
     size_t size = N * sizeof(float);
@@ -69,6 +80,27 @@ int main() {
     cudaMemcpy(h_C, d_C, size, cudaMemcpyDeviceToHost);
 
     printf("GPU Vector Add Time: %lf seconds\n", ((double)(end - start))/CLOCKS_PER_SEC);
+
+
+    start = clock();
+    vectorAddGPUCondition<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, N);
+    err = cudaDeviceSynchronize();
+    if (err != cudaSuccess) {
+        fprintf(stderr, "Kernel launch failed: %s\n", cudaGetErrorString(err));
+        cudaFree(d_A);
+        cudaFree(d_B);
+        cudaFree(d_C);
+        free(h_A);
+        free(h_B);
+        free(h_C);
+        exit(EXIT_FAILURE);
+    }
+    end = clock();
+
+    cudaMemcpy(h_C, d_C, size, cudaMemcpyDeviceToHost);
+
+    printf("GPU Vector Add Time with Divergence: %lf seconds\n", ((double)(end - start))/CLOCKS_PER_SEC);
+
 
     cudaFree(d_A);
     cudaFree(d_B);
